@@ -1,0 +1,54 @@
+.glass {
+    margin: 30px auto;
+    height: 300px;
+    width: 100px;
+    position: relative;
+    border-style: none solid solid solid;
+    border-width: 10px;
+    border-color: lightgray;
+    border-radius: 10px;
+}
+
+.water {
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(bottom, rgb(255, 136, 0), rgb(255, 203, 0));
+    position: absolute;
+    bottom: 0;
+}
+.keg{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.name{
+
+  transform: rotate(-90deg) translateY(-70px) translateX(10em);
+  font-weight: 200;
+}
+
+.pricing{
+
+  display: flex;
+  justify-content: space-around;
+}
+.pricing--price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details--growlers{
+  display: flex;
+}
+.beer--header{
+  display: flex;
+  justify-content: space-between;
+}
+.beer--characteristics{
+  display: flex;
+}
+.details--image img{
+  width: 100%;
+  /*max-width: 100%;*/
+}

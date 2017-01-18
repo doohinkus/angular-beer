@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body { background-color: #0e83cd }
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+}

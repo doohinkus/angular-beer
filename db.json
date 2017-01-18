@@ -1,0 +1,47 @@
+{
+  "kegs" : [{
+    "name" : "Block 15 Sticky Hands Imp. IPA",
+    "description" : "This hop experience ale features ample additions of sticky, resinous, lupulin packed hop buds grown in the Pacific Northwest. Enjoy a hop decrescendo that begins with an aromatic blast of tropical fruits, citrus and dank herbs, transitions into intense hop flavor and then ends with a subtle bitter finish. Gently propped up by pale malted barley and fermented with specially selected brewer’s yeast designed to balance this immense hop experience.",
+    "origin" : "WILLAMETTE VALLEY",
+    "brand" : "Block 15",
+    "price" : 6,
+    "ABV" : 8,
+    "IBU" : 110,
+    "style" : "IMPERIAL IPA",
+    "sale-percentage" : 0,
+    "pints" : 124
+  },{
+    "name" : "Rogue 4 Hop Session IPA",
+    "description" : "In a bold collaboration with Mother Nature, we grow our own varieties of aroma hops at Rogue Farms in Independence, OR. We also string, stake, train, test, trim, separate, sort, kiln and cool them. Brewmaster John Maier meticulously selected and blended 4 varieties of our aroma hops to create the approachable and aromatic signature of our 4 Hop IPA.",
+    "origin" : "OREGON COAST",
+    "brand" : "ROGUE",
+    "price" : 6,
+    "ABV" : 4,
+    "IBU" : 55,
+    "style" : "IPA",
+    "sale-percentage" : 0,
+    "pints" : 124
+  },{
+    "name" : "Fort George Magnanamus IPA",
+    "description" : "Fort George presents to you its latest seasonal collaboration, Magnanimous IPA, a joint effort with Earth & Sky Farm of Oregon City. Bestowed with generous amounts of hand-harvested Grand Fir tips and bountiful additions of Simcoe and Chinook hops, Magnanimous IPA offers a noble blend of lush piney hops and fresh evergreen aroma.",
+    "origin" : "OREGON COAST",
+    "brand" : "FORT GEORGE",
+    "price" : 6,
+    "ABV" : 7,
+    "IBU" : 68,
+    "style" : "IPA",
+    "sale-percentage" : 0,
+    "pints" : 124
+  },{
+    "name" : "Old Town Kris KringleAle Spiced Ale",
+    "description" : "As fluffy and exciting as the first snowfall of the year, this unfiltered white ale is met with anticipation. The familiar characters of winter citrus and wheat are complemented by the festive spices of nutmeg and cinnamon. Together the orange, nutmeg and cinnamon provide the perfect amount of spicy warmth for those wet chilly days and long cold nights, leaving you wanting a bit more.",
+    "origin" : "PORTLAND METRO AREA",
+    "brand" : "OLD TOWN",
+    "price" : 6,
+    "ABV" : 5.8,
+    "IBU" : 9,
+    "style" : "ALE",
+    "sale-percentage" : 0,
+    "pints" : 124
+  }]
+}

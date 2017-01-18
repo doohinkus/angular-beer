@@ -1,0 +1,121 @@
+<div class="container">
+
+<h1 class="text-center">Tap-Room</h1>
+
+<div class="keg">
+	<div *ngFor="let keg of kegs | async">
+		<div class="glass">
+			<div class="water" [style.height.px]="
+			(keg.pints/124)*250"></div>
+		</div>
+		<h4 class="name">{{keg.name}}</h4>
+		<h6>{{keg.pints}} / 124</h6>
+		<button  (click)="buyPint(keg.$key, keg)" class="btn btn-default">Buy</button>
+		<button (click)="showDetails(keg)" class="btn btn-default">Info</button>
+		<button (click)="showEdit(keg)" class="btn btn-default">Edit</button>
+	</div>
+</div>
+
+<div *ngIf="edit">
+	  <div class="form-group">
+	    <label for="">Name: </label>
+	    <input type="name" class="form-control" [(ngModel)]="currentBeerEdit.name"  placeholder="Name:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">Description: </label>
+	    <input type="description" class="form-control" [(ngModel)]="currentBeerEdit.description"  placeholder="Description:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">Style: </label>
+	    <input type="style" class="form-control" [(ngModel)]="currentBeerEdit.style"  placeholder="Style:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">Origin: </label>
+	    <input type="origin" class="form-control" [(ngModel)]="currentBeerEdit.origin"  placeholder="Origin:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">Brand: </label>
+	    <input type="brand" class="form-control" [(ngModel)]="currentBeerEdit.brand"  placeholder="Brand:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">ABV: </label>
+	    <input type="ABV" class="form-control" [(ngModel)]="currentBeerEdit.ABV"  placeholder="ABV:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">IBU: </label>
+	    <input type="IBU" class="form-control" [(ngModel)]="currentBeerEdit.IBU"  placeholder="IBU:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">Price: </label>
+	    <input type="price" class="form-control" [(ngModel)]="currentBeerEdit.price"  placeholder="Price:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">ImageUrl: </label>
+	    <input type="imageUrl" class="form-control" [(ngModel)]="currentBeerEdit.imageUrl"  placeholder="ImageUrl:">
+	  </div>
+	  <div class="form-group">
+	    <label for="">pints: </label>
+	    <input type="name" class="form-control" [(ngModel)]="currentBeerEdit.name"  placeholder="pints:">
+	  </div>
+
+	  <button (click)="editKeg(currentBeerEdit)" class="btn btn-default">Update</button>
+
+</div>
+
+<div class="row" *ngIf="details">
+	<div class="col-xs-2">
+		<div class="keg-details">
+			<div class="details--image">
+				<img src="{{currentBeer.imageUrl}}" alt="" />
+			</div>
+			<div class="details--growlers">
+				<div class="growlers--small">
+					<h3>16oz</h3>
+					<div class="small--size">
+						small growler
+					</div>
+					<h3>Buy</h3>
+				</div><!--end growler  small-->
+				<div class="growlers--large">
+						<h3>32oz</h3>
+						<div class="small--size">
+							small growler
+						</div>
+						<h3>Buy</h3>
+				</div><!--end growler  large-->
+			</div><!--end details  growlers-->
+
+	</div><!--keg-details-->
+</div><!--end col-xs-2-->
+<div class="col-xs-10">
+		<div class="beer">
+			<div class="beer--header">
+				<div class="beer--title"><h2>{{currentBeer.name}}</h2></div>
+				<div class="beer--style"><h3>{{currentBeer.style}}</h3></div>
+			</div>
+			<p class="beer--description">
+				{{currentBeer.description}}
+			</p>
+			<div class="beer--characteristics">
+				<div class="beer--abv">
+					{{currentBeer.ABV}}
+				</div>
+				<div class="beer--ibu">
+					{{currentBeer.IBU}}
+				</div>
+			</div>
+		</div><!-- end beer-->
+
+		<div class="pricing">
+			<div class="pricing--refill">
+
+			</div>
+			<div class="pricing--price">
+				<div class="price--title">{{currentBeer.price}}$</div>
+				<span class="pricing--separator">/</span>
+				<span class="pricing--pint">{{currentBeer.pints}}</span>
+			</div>
+		</div><!--end pricing-->
+</div><!--end col-xs-10-->
+
+</div><!--end row-->
