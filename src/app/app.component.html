@@ -1,18 +1,58 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Tap-Room</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <li class="nav-item active">
+      <button (click)="showNew()" class="btn btn-outline-secondary">Add New Keg</button>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+    </ul>
+     <div class="form-inline">
+
+			 <label class="filter">Filter by name </label>
+			 <input type="text" [(ngModel)]="term" class="form-control">
+     </div>
+
+  </div>
+</nav>
+
+
+<div class="site-wrapper">
 <div class="container">
 
-<h1 class="text-center">Tap-Room</h1>
+<!-- <h1 class="text-center">Tap-Room</h1> -->
+
+
+<br>
 
 <div class="keg">
-	<div *ngFor="let keg of kegs | async">
-		<div class="glass">
-			<div class="water" [style.height.px]="
-			(keg.pints/124)*250"></div>
+	<div *ngFor="let keg of kegs | async | filter:term; let i = index">
+		<h3 class="name">{{keg.name}}</h3>
+		<h4 class="origin">{{keg.origin}}</h4>
+		<img class="circle" src={{keg.imageUrl}} />
+
+		<div class="style">
+			<h3>{{keg.style}}</h3>
 		</div>
-		<h4 class="name">{{keg.name}}</h4>
-		<h6>{{keg.pints}} / 124</h6>
-		<button  (click)="buyPint(keg.$key, keg)" class="btn btn-default">Buy</button>
-		<button (click)="showDetails(keg)" class="btn btn-default">Info</button>
-		<button (click)="showEdit(keg)" class="btn btn-default">Edit</button>
+		<h5>{{keg.ABV}}% ABV - {{keg.IBU}} IBU</h5>
+		<h5 class="tap">KEG #{{i+1}}</h5>
+		<div class="glass">
+			<div class="liquid" [style.height.px]="
+			(keg.pints/124)*240"></div>
+		</div>
+		<h6> <small>( {{keg.pints}} / 124 )</small> </h6>
+		<button  (click)="buyPint(keg.$key, keg)" class="btn btn-outline-success">Buy</button>
+		<button (click)="showDetails(keg)" class="btn  btn-outline-info">Info</button>
+		<button (click)="showEdit(keg)" class="btn  btn-outline-warning">Edit</button>
 
 	</div>
 </div>
@@ -56,12 +96,11 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="">pints: </label>
-	    <input type="name" class="form-control" [(ngModel)]="currentBeerEdit.name"  placeholder="pints:">
+	    <input type="pints" class="form-control" [(ngModel)]="currentBeerEdit.pints"  placeholder="pints:">
 	  </div>
 
 	  <button (click)="editKeg(currentBeerEdit)" class="btn btn-default">Update</button>
 </div>
-<button (click)="showNew()" class="btn btn-default">New Keg</button>
 <div *ngIf="add">
 		<div class="form-group">
 			<label for="">Name: </label>
@@ -165,3 +204,5 @@
 </div><!--end col-xs-10-->
 
 </div><!--end row-->
+
+</div>

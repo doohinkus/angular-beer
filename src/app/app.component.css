@@ -1,20 +1,39 @@
 .glass {
-    margin: 30px auto;
-    height: 300px;
-    width: 100px;
-    position: relative;
-    border-style: none solid solid solid;
-    border-width: 10px;
-    border-color: lightgray;
-    border-radius: 10px;
+	height: 260px;
+  width: 150px;
+	position: relative;
+  margin: auto;
+	background-image: url('http://i.imgur.com/17f4WYs.png');
+	background-repeat: no-repeat;
+  margin-left: -9px;
+		}
+.style{
+  background-color: #272727;
+  /*opacity: .3;*/
+  padding: .75em;
+  margin-top: .55em;
+  /*border: 3px solid green;*/
 }
-
-.water {
-    width: 100%;
-    height: 100%;
-    background-image: -webkit-linear-gradient(bottom, rgb(255, 136, 0), rgb(255, 203, 0));
-    position: absolute;
-    bottom: 0;
+.filter{
+  margin-right: .35em;
+}
+.tap{
+  background-color: rgb(221, 170, 50);
+  padding: .5em;
+  color: #111;
+  text-shadow: none;
+}
+.liquid {
+  z-index:-1;
+  position:absolute;
+  bottom:0;
+  width: 140px;
+  height: 80%;
+  background-image: -webkit-linear-gradient(bottom, rgb(255, 136, 0), rgb(255, 203, 0))
+}
+.circle{
+  border-radius: 100%;
+  width: 130px;
 }
 .keg{
   display: flex;
@@ -23,9 +42,10 @@
   flex-wrap: wrap;
 }
 .name{
-
-  transform: rotate(-90deg) translateY(-70px) translateX(10em);
+  /*transform: rotate(-90deg) translateY(-70px) translateX(10em);*/
   font-weight: 200;
+  color: rgb(221, 170, 50);
+  margin-top: .45em !important;
 }
 
 .pricing{
