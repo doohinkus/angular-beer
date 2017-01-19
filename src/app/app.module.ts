@@ -7,6 +7,8 @@ import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
+import { ModalModule } from 'ng2-bootstrap';
+// import { PercentagePipe } from './percentage.pipe';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDQmn4gW99M0tdYbr4vTLNNxoZNIXq79Zg",
@@ -22,6 +24,7 @@ export const firebaseConfig = {
     FilterPipe
   ],
   imports: [
+    ModalModule.forRoot(),
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,

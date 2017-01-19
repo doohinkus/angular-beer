@@ -1,3 +1,6 @@
+.card, .card-header, .card-footer {
+	background-color: transparent;
+}
 .glass {
 	height: 260px;
   width: 150px;
