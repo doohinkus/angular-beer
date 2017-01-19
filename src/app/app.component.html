@@ -13,6 +13,7 @@
 		<button  (click)="buyPint(keg.$key, keg)" class="btn btn-default">Buy</button>
 		<button (click)="showDetails(keg)" class="btn btn-default">Info</button>
 		<button (click)="showEdit(keg)" class="btn btn-default">Edit</button>
+
 	</div>
 </div>
 
@@ -59,8 +60,53 @@
 	  </div>
 
 	  <button (click)="editKeg(currentBeerEdit)" class="btn btn-default">Update</button>
-
 </div>
+<button (click)="showNew()" class="btn btn-default">New Keg</button>
+<div *ngIf="add">
+		<div class="form-group">
+			<label for="">Name: </label>
+			<input class="form-control"  placeholder="Name:" [(ngModel)]="name">
+		</div>
+		<div class="form-group">
+			<label for="">Description: </label>
+			<input  class="form-control"  placeholder="Description:" [(ngModel)]="description">
+		</div>
+		<div class="form-group">
+			<label for="">Style: </label>
+			<input  class="form-control"  placeholder="Style:" [(ngModel)]="style">
+		</div>
+		<div class="form-group">
+			<label for="">Origin: </label>
+			<input  class="form-control"  placeholder="Origin:" [(ngModel)]="origin">
+		</div>
+		<div class="form-group">
+			<label for="">Brand: </label>
+			<input  class="form-control"   placeholder="Brand:" [(ngModel)]="brand">
+		</div>
+		<div class="form-group">
+			<label for="">ABV: </label>
+			<input  class="form-control" placeholder="ABV:" [(ngModel)]="abv">
+		</div>
+		<div class="form-group">
+			<label for="">IBU: </label>
+			<input  class="form-control" placeholder="IBU:" [(ngModel)]="ibu">
+		</div>
+		<div class="form-group">
+			<label for="">Price: </label>
+			<input  class="form-control"   placeholder="Price:" [(ngModel)]="price">
+		</div>
+		<div class="form-group">
+			<label for="">ImageUrl: </label>
+			<input  class="form-control" placeholder="ImageUrl:" [(ngModel)]="imageurl">
+		</div>
+		<div class="form-group">
+			<label for="">pints: </label>
+			<input  class="form-control"  placeholder="pints:" [(ngModel)]="pints">
+		</div>
+
+	<input class="btn btn-success" value="Submit" (click)="addKeg()">
+	</div>
+
 
 <div class="row" *ngIf="details">
 	<div class="col-xs-2">

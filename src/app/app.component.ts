@@ -1,5 +1,6 @@
 import { Component, AfterViewInit} from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { ReactiveFormsModule } from '@angular/forms';
   declare var $: any
 
 @Component({
@@ -10,9 +11,21 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 export class AppComponent implements AfterViewInit {
   details: boolean = false;
   edit: boolean = false;
+  add: boolean = false;
   currentBeer: any;
   currentBeerEdit: any;
   height: number;
+  name:string;
+  description:string;
+  style:string;
+  origin:string;
+  brand:string;
+  abv:string;
+  ibu:string;
+  pints:string;
+  price:string;
+  imageurl:string;
+  salePercentage:string;
 
   kegs: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
@@ -35,6 +48,9 @@ export class AppComponent implements AfterViewInit {
       this.currentBeerEdit = null;
       this.edit = false;
     }
+  }
+  showNew(){
+    this.add = !this.add;
   }
   buyPint(key: string, keg){
     if (keg.pints>0){
@@ -59,46 +75,25 @@ export class AppComponent implements AfterViewInit {
     this.edit = false;
   }
 
+  addKeg(){
+
+      this.kegs.push({
+        name : this.name,
+        description : this.description,
+        origin : this.origin,
+        brand : this.brand,
+        price : this.price,
+        ABV : this.abv,
+        IBU : this.ibu,
+        style : this.style,
+        salePercentage : 0,
+        pints : this.pints,
+        imageUrl: this.imageurl
+      })
+
+  }
+
   ngAfterViewInit(){
-  //   var $container = $('.beer-container');
-  //   var $bubbles = $('.bubbles');
-  //   var bubbleCount = 50;
-  //   var maxTime = 10;
-  //   var minTime = 3;
-  //   var maxWidth = 10;
-  //   var minWidth = 2;
-  //   var minOpacity = 0.2;
-  //   var maxOpacity = 1;
-  //
-  //   $('.color-selector a').on('click', function(){
-  //   	$('.liquid').css('background-image', $(this).css('background-image'));
-  //   });
-  //   $('.color-selector a:first-child').click();
-  //
-  //   $('input').on('input', function(){
-  //   	$container.css('height', $(this).val() + '%');
-  //   });
-  //
-  //   function _reset($el){
-  //   	var randTime = (Math.random() * (maxTime - minTime)) + minTime;
-  //   	var randWidth = (Math.random() * (maxWidth - minWidth)) + minWidth;
-  //   	var percLeft = Math.random() * 100;
-  //   	var randOpacity = (Math.random() * (maxOpacity - minOpacity)) + minOpacity;
-  //
-  //   	$el.css({
-  //   		'bottom': '0%',
-  //   		'-webkit-transition-duration': '0s',
-  //   		'width': randWidth + '%',
-  //   		'left': percLeft + '%',
-  //   		'opacity': randOpacity
-  //   	});
-  //
-  //   	setTimeout(function(){
-  //   		$el.css({
-  //   			'-webkit-transition-duration': randTime + 's',
-  //   			'bottom': '100%'
-  //   		})
-  //   	}, 10);
-  //   }
+
       }
 }
