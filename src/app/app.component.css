@@ -1,6 +1,14 @@
 .card, .card-header, .card-footer {
 	background-color: transparent;
 }
+.btn{
+	background-color: transparent;
+	border: 2px solid #232323;
+	transition: background-color .3s ease-in-out;
+}
+.btn:hover{
+	background-color: rgb(221, 170, 50);
+}
 .glass {
 	height: 260px;
   width: 150px;

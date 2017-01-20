@@ -7,7 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
-import { ModalModule } from 'ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap/modal'
 // import { PercentagePipe } from './percentage.pipe';
 
 export const firebaseConfig = {
