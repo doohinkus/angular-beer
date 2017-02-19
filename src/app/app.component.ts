@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ReactiveFormsModule } from '@angular/forms';
-import {ModalModule} from "ngx-modal";
+// import {ModalModule} from "ngx-modal";
 
 
   declare var $: any

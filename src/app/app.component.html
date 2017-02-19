@@ -1,8 +1,5 @@
 
 <nav class="nav navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
   <a class="navbar-brand" href="#">Tap-Room</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -10,12 +7,6 @@
       <li class="nav-item active">
       <button (click)="showNew()" class="btn btn-outline-secondary navbar-btn">Add New Keg</button>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
     </ul>
      <div class="form-inline navbar-form navbar-right">
 
@@ -50,12 +41,12 @@
 		<h6> <small>( {{keg.pints}} / 124 )</small> </h6>
 		<button  (click)="buyPint(keg.$key, keg)" class="btn btn-outline-success">Buy</button>
 		<button (click)="showDetails(keg)" class="btn  btn-outline-info">Info</button>
-		<button (click)="showEdit(keg)" class="btn  btn-outline-warning">Edit</button>
+		<button (click)="showEdit(keg)" class="btn  btn-outline-warning" data-toggle="modal" data-target="#myModal">Edit</button>
 
 	</div>
 </div>
 
-<div *ngIf="edit">
+<!-- <div *ngIf="edit">
 	  <div class="form-group">
 	    <label for="">Name: </label>
 	    <input type="name" class="form-control" [(ngModel)]="currentBeerEdit.name"  placeholder="Name:">
@@ -98,7 +89,7 @@
 	  </div>
 
 	  <button (click)="editKeg(currentBeerEdit)" class="btn btn-default">Update</button>
-</div>
+</div> -->
 <div *ngIf="add">
 		<div class="form-group">
 			<label for="">Name: </label>
@@ -187,4 +178,69 @@
     </div>
   </div>
 
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="edit">
+        	  <div class="form-group">
+        	    <label for="">Name: </label>
+        	    <input type="name" class="form-control" [(ngModel)]="currentBeerEdit.name"  placeholder="Name:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">Description: </label>
+        	    <input type="description" class="form-control" [(ngModel)]="currentBeerEdit.description"  placeholder="Description:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">Style: </label>
+        	    <input type="style" class="form-control" [(ngModel)]="currentBeerEdit.style"  placeholder="Style:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">Origin: </label>
+        	    <input type="origin" class="form-control" [(ngModel)]="currentBeerEdit.origin"  placeholder="Origin:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">Brand: </label>
+        	    <input type="brand" class="form-control" [(ngModel)]="currentBeerEdit.brand"  placeholder="Brand:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">ABV: </label>
+        	    <input type="ABV" class="form-control" [(ngModel)]="currentBeerEdit.ABV"  placeholder="ABV:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">IBU: </label>
+        	    <input type="IBU" class="form-control" [(ngModel)]="currentBeerEdit.IBU"  placeholder="IBU:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">Price: </label>
+        	    <input type="price" class="form-control" [(ngModel)]="currentBeerEdit.price"  placeholder="Price:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">ImageUrl: </label>
+        	    <input type="imageUrl" class="form-control" [(ngModel)]="currentBeerEdit.imageUrl"  placeholder="ImageUrl:">
+        	  </div>
+        	  <div class="form-group">
+        	    <label for="">pints: </label>
+        	    <input type="pints" class="form-control" [(ngModel)]="currentBeerEdit.pints"  placeholder="pints:">
+        	  </div>
+
+        </div>
+        <button (click)="editKeg(currentBeerEdit)" data-dismiss="modal" class="btn btn-default">Update</button>
+      </div>
+
+    </div>
+  </div>
 </div>
