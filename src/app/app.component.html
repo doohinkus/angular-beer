@@ -23,73 +23,47 @@
 
 
 
-<div class="keg">
+<!-- <div class="keg"> -->
 	<div *ngFor="let keg of kegs | async | filter:term; let i = index">
-		<h3 class="name">{{keg.name}}</h3>
-		<h4 class="origin">{{keg.origin}}</h4>
-		<img class="circle" src={{keg.imageUrl}} />
+    <div class="row">
+      <div class="col-sm-12">
+        <h5 class="tap">KEG #{{i+1}}</h5>
+      </div>
+    </div>
+    <div class="row">
 
-		<div class="style">
-			<h3>{{keg.style}}</h3>
-		</div>
-		<h5>{{keg.ABV}}% ABV - {{keg.IBU}} IBU</h5>
-		<h5 class="tap">KEG #{{i+1}}</h5>
-		<div class="glass">
-			<div class="liquid" [style.height.%]="
-			((keg.pints-15)/124)*100"></div>
-		</div>
-		<h6> <small>( {{keg.pints}} / 124 )</small> </h6>
-		<button  (click)="buyPint(keg.$key, keg)" class="btn btn-outline-success">Buy</button>
-		<button (click)="showDetails(keg)" class="btn  btn-outline-info">Info</button>
-		<button (click)="showEdit(keg)" class="btn  btn-outline-warning" data-toggle="modal" data-target="#myModal">Edit</button>
+      <div class="col-sm-4">
+        <h3 class="name">{{keg.name}}</h3>
+    		<h4 class="origin">{{keg.origin}}</h4>
+    		<img class="circle" src={{keg.imageUrl}} />
+    		<div class="style">
+    			<h3>{{keg.style}}</h3>
+    		</div>
+    		<h4>{{keg.ABV}}% ABV - {{keg.IBU}} IBU</h4>
+
+      </div>
+
+      <div class="col-sm-4">
+       <h4>( {{keg.pints}} / 124 )</h4>
+        <div class="glass">
+          <div class="liquid" [style.height.%]="
+          ((keg.pints-15)/124)*100"></div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <button  (click)="buyPint(keg.$key, keg)" class="btn btn-outline-success btn-block">Buy</button>
+        <button (click)="showDetails(keg)" class="btn  btn-outline-info btn-block" data-toggle="modal" data-target="#detailModal">Info</button>
+        <button (click)="showEdit(keg)" class="btn  btn-outline-warning btn-block" data-toggle="modal" data-target="#myModal">Edit</button>
+      </div>
+
+    </div>
+
+
 
 	</div>
-</div>
+<!-- </div> -->
 
-<!-- <div *ngIf="edit">
-	  <div class="form-group">
-	    <label for="">Name: </label>
-	    <input type="name" class="form-control" [(ngModel)]="currentBeerEdit.name"  placeholder="Name:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">Description: </label>
-	    <input type="description" class="form-control" [(ngModel)]="currentBeerEdit.description"  placeholder="Description:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">Style: </label>
-	    <input type="style" class="form-control" [(ngModel)]="currentBeerEdit.style"  placeholder="Style:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">Origin: </label>
-	    <input type="origin" class="form-control" [(ngModel)]="currentBeerEdit.origin"  placeholder="Origin:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">Brand: </label>
-	    <input type="brand" class="form-control" [(ngModel)]="currentBeerEdit.brand"  placeholder="Brand:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">ABV: </label>
-	    <input type="ABV" class="form-control" [(ngModel)]="currentBeerEdit.ABV"  placeholder="ABV:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">IBU: </label>
-	    <input type="IBU" class="form-control" [(ngModel)]="currentBeerEdit.IBU"  placeholder="IBU:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">Price: </label>
-	    <input type="price" class="form-control" [(ngModel)]="currentBeerEdit.price"  placeholder="Price:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">ImageUrl: </label>
-	    <input type="imageUrl" class="form-control" [(ngModel)]="currentBeerEdit.imageUrl"  placeholder="ImageUrl:">
-	  </div>
-	  <div class="form-group">
-	    <label for="">pints: </label>
-	    <input type="pints" class="form-control" [(ngModel)]="currentBeerEdit.pints"  placeholder="pints:">
-	  </div>
-
-	  <button (click)="editKeg(currentBeerEdit)" class="btn btn-default">Update</button>
-</div> -->
 <div *ngIf="add">
 		<div class="form-group">
 			<label for="">Name: </label>
@@ -138,61 +112,82 @@
 
 
 
-  <div class="card" *ngIf="details">
-    <div class="card-header">
-      Featured
-    </div>
-    <div class="card-block">
-        <div class="row">
-          <div class="col-sm-4">
-            <img src={{currentBeer.imageUrl}} alt="" />
-          </div>
 
-          <div class="col-sm-8 text-left">
-            <h2 class="card-title">{{currentBeer.name}}</h2>
-            <h5>ABV</h5>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70"
-              aria-valuemin="0" aria-valuemax="100" [style.width.%]="
-        			(currentBeer.ABV)">
-                {{currentBeer.ABV}}%
-              </div>
-            </div>
-            <h5>IBU</h5>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70"
-              aria-valuemin="0" aria-valuemax="100" [style.width.%]="
-        			(currentBeer.IBU)">
-                {{currentBeer.IBU}}%
-              </div>
-            </div>
-            <h2 class="card-title">Description:</h2>
-            <p>
-              {{currentBeer.description}}
-            </p>
-          </div>
-        </div>
-
-    <div class="card-footer text-muted">
-      2 days ago
-    </div>
-  </div>
-
-</div>
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
-</button>
+</button> -->
 
-<!-- Modal -->
+<!-- Info Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="detailModalLabel">Keg Details</h4>
+      </div>
+      <div class="modal-body">
+        <div class="card" *ngIf="details">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-block">
+              <div class="row">
+                <div class="col-sm-12">
+                  <img src={{currentBeer.imageUrl}} alt="" />
+                </div>
+
+                <div class="col-sm-12 text-left">
+                  <h2 class="card-title">{{currentBeer.name}}</h2>
+                  <h5>ABV</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="0" aria-valuemax="100" [style.width.%]="
+              			(currentBeer.ABV)">
+                      {{currentBeer.ABV}}%
+                    </div>
+                  </div>
+                  <h5>IBU</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="0" aria-valuemax="100" [style.width.%]="
+              			(currentBeer.IBU)">
+                      {{currentBeer.IBU}}%
+                    </div>
+                  </div>
+                  <h2 class="card-title">Description:</h2>
+                  <p>
+                    {{currentBeer.description}}
+                  </p>
+                </div>
+              </div>
+
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+
+      </div>
+        <button data-dismiss="modal" class="btn btn-default">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Edit Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Edit Keg</h4>
       </div>
       <div class="modal-body">
         <div *ngIf="edit">

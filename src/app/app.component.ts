@@ -44,7 +44,7 @@ export class AppComponent implements AfterViewInit {
       this.details = true;
     }else{
       this.currentBeer = null;
-      this.details = false;
+      // this.details = false;
     }
   }
   showEdit(keg){
@@ -53,7 +53,7 @@ export class AppComponent implements AfterViewInit {
       this.edit = true;
     }else{
       this.currentBeerEdit = null;
-      this.edit = false;
+      // this.edit = false;
     }
   }
   showNew(){

@@ -9,15 +9,7 @@
 .btn:hover{
 	background-color: rgb(221, 170, 50);
 }
-.glass {
-	height: 260px;
-  width: 150px;
-	position: relative;
-  margin: auto;
-	background-image: url('http://i.imgur.com/17f4WYs.png');
-	background-repeat: no-repeat;
-  margin-left: -9px;
-		}
+
 .style{
   background-color: #272727;
   /*opacity: .3;*/
