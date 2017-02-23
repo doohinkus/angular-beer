@@ -1,4 +1,4 @@
-.card, .card-header, .card-footer {
+/*.card, .card-header, .card-footer {
 	background-color: transparent;
 }
 .btn{
@@ -12,10 +12,10 @@
 
 .style{
   background-color: #272727;
-  /*opacity: .3;*/
+
   padding: .75em;
   margin-top: .55em;
-  /*border: 3px solid green;*/
+
 }
 .filter{
   margin-right: .35em;
@@ -45,7 +45,7 @@
   flex-wrap: wrap;
 }
 .name{
-  /*transform: rotate(-90deg) translateY(-70px) translateX(10em);*/
+
   font-weight: 200;
   color: rgb(221, 170, 50);
   margin-top: .45em !important;
@@ -73,5 +73,5 @@
 }
 .details--image img{
   width: 100%;
-  /*max-width: 100%;*/
-}
+
+}*/

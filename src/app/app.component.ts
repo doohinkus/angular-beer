@@ -43,7 +43,7 @@ export class AppComponent implements AfterViewInit {
       this.currentBeer = keg;
       this.details = true;
     }else{
-      this.currentBeer = null;
+      // this.currentBeer = null;
       // this.details = false;
     }
   }
@@ -52,7 +52,7 @@ export class AppComponent implements AfterViewInit {
       this.currentBeerEdit = keg;
       this.edit = true;
     }else{
-      this.currentBeerEdit = null;
+      // this.currentBeerEdit = null;
       // this.edit = false;
     }
   }

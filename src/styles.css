@@ -26,13 +26,60 @@ div[class*="col-"] h2, div[class*="col-"] h5, .card-header{
 }
 .glass {
 	height: 260px;
-  width: 150px;
+  width: 202px;
 	position: relative;
-  /*margin: auto;*/
+  margin-left: auto;
+  margin-right: auto;
 	background-image: url('http://i.imgur.com/17f4WYs.png');
 	background-repeat: no-repeat;
-  /*margin-left: -9px;*/
 		}
+.keg{
+/*background-color: rgba(4,4,4, .2);*/
+z-index: -1;
+border-radius: 7px;
+box-shadow: 3px 3px 3px #222;
+    margin: 5px;
+  padding:15px;
+}
+    .filter{
+      margin-right: .35em;
+    }
+    .tap{
+      background-color: rgb(221, 170, 50);
+      padding: .5em;
+      color: #111;
+      text-shadow: none;
+    }
+    .liquid {
+      z-index:-1;
+      position:absolute;
+      bottom:0;
+      width: 140px;
+      height: 80%;
+      background-image: -webkit-linear-gradient(bottom, rgb(255, 136, 0), rgb(255, 203, 0))
+    }
+    .circle{
+      border-radius: 100%;
+      width: 130px;
+    }
+    .btn{
+    	/*background-color: transparent;*/
+    	/*border: 2px solid #232323;*/
+      margin-top: 5px;
+      border-radius: 5px;
+    	transition: background-color .3s ease-in-out;
+    }
+    .btn:hover{
+    	background-color: rgb(221, 170, 50);
+    }
+
+    .style{
+      background-color: #272727;
+
+      padding: .75em;
+      margin-top: .55em;
+
+    }
 .ribbon {
 		padding: .24em 1em;
 		margin: 0;
