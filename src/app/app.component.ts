@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ReactiveFormsModule } from '@angular/forms';
+
 // import {ModalModule} from "ngx-modal";
 
 
@@ -29,6 +30,7 @@ export class AppComponent implements AfterViewInit {
   price:string;
   imageurl:string;
   salePercentage:string;
+  pintsLeft:number;
 
   kegs: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
@@ -63,6 +65,12 @@ export class AppComponent implements AfterViewInit {
     if (keg.pints>0){
       keg.pints-=1;
       this.kegs.update(key, { pints: keg.pints });
+    }
+    if (this.pintsLeft>0){
+      this.pintsLeft=((keg.pints)/124)*100;
+    }else{
+      // this.pintsLeft=0;
+      this.pintsLeft=50;
     }
   }
   editKeg(key: string){
@@ -101,6 +109,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(){
-
-      }
+    // this.pintsLeft= this.currentBeerEdit.pints;
+  }
 }

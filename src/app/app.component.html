@@ -1,5 +1,5 @@
 
-<nav class="nav navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<nav class="nav navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-fixed-top">
   <a class="navbar-brand" href="#">Tap-Room</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -71,8 +71,7 @@
 
       <div class="col-sm-4 text-center">
         <div class="glass">
-          <div class="liquid" [style.height.%]="
-          ((keg.pints-15)/124)*100"></div>
+          <div class="liquid" [style.height.%]="((keg.pints)/124)*100"></div>
         </div>
         <h4>( {{keg.pints}} / 124 )</h4>
           <button  (click)="buyPint(keg.$key, keg)" class="btn btn-outline-success btn-block">Buy</button>

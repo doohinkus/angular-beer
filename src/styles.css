@@ -24,15 +24,7 @@ div[class*="col-"] h2, div[class*="col-"] h5, .card-header{
   color: #444;
   text-shadow: none;
 }
-.glass {
-	height: 260px;
-  width: 202px;
-	position: relative;
-  margin-left: auto;
-  margin-right: auto;
-	background-image: url('http://i.imgur.com/17f4WYs.png');
-	background-repeat: no-repeat;
-		}
+
 .keg{
 /*background-color: rgba(4,4,4, .2);*/
 z-index: -1;
@@ -50,12 +42,29 @@ box-shadow: 3px 3px 3px #222;
       color: #111;
       text-shadow: none;
     }
+    .glass {
+    	height: 145px;
+      width: 57px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    	background-image: url('assets/beer-glass.png');
+      background-position: center;
+    	background-repeat: no-repeat;
+    }
     .liquid {
       z-index:-1;
-      position:absolute;
-      bottom:0;
-      width: 140px;
-      height: 80%;
+      position: absolute;
+      bottom: 20px;
+      /*left: 35%;*/
+      /*margin-left: -170px;*/
+      /*transform: rotate(180deg);*/
+      /*transform: translate(52%);*/
+      width: 57px;
+      height: 100%;
+      /*margin-bottom: 0;*/
+      margin-left:auto;
+      margin-right:auto;
       background-image: -webkit-linear-gradient(bottom, rgb(255, 136, 0), rgb(255, 203, 0))
     }
     .circle{
