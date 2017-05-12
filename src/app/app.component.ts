@@ -31,6 +31,7 @@ export class AppComponent implements AfterViewInit {
   imageurl:string;
   salePercentage:string;
   pintsLeft:number;
+  term:string;
 
   kegs: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
@@ -116,7 +117,13 @@ export class AppComponent implements AfterViewInit {
       pints : pints,
       imageUrl: imageurl
     }
+    if (!name || !description || !origin || !brand || !price || !abv ||
+    !ibu || !style || !pints || !imageurl){
+      alert("Please fill in all fields.");
+    }else{
+
       this.kegs.push(thisKeg);
+    }
       console.log("asdfsd", this.kegs);
 
   }
