@@ -1,6 +1,8 @@
 # TapRoom
-It was a two day project for a taproom. It lets a taproom owner keep track of their kegs, displaying all of the keg's details, allowing the owner to edit kegs, to add new brews, and to filter brews by name. In addition, it has a feature that tracks how many pints are left in the keg whenever a pint is sold.
+This was a two day project for a taproom. It lets a taproom owner keep track of their kegs, displaying all of the keg's details, allowing the owner to edit kegs, to add new brews, and to filter beers by name. In addition, it has a feature that tracks how many pints are left in the keg whenever a pint is sold.
 It was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
+# Link to live project
+[Angular2 Taproom hosted on Surge](http://angular-taproom.surge.sh/)
 
 ##Requirements
 * NodeJS
