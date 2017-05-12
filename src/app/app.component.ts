@@ -83,28 +83,41 @@ export class AppComponent implements AfterViewInit {
       ABV : this.currentBeerEdit.ABV,
       IBU : this.currentBeerEdit.IBU,
       style : this.currentBeerEdit.style,
-      salePercentage : this.currentBeerEdit.salePercentage,
+      salePercentage : 0,
       pints : this.currentBeerEdit.pints,
       imageUrl: this.currentBeerEdit.imageUrl
     });
     this.edit = false;
   }
+  hideEdit(){
+    this.add = false;
+  }
 
-  addKeg(){
-
-      this.kegs.push({
-        name : this.name,
-        description : this.description,
-        origin : this.origin,
-        brand : this.brand,
-        price : this.price,
-        ABV : this.abv,
-        IBU : this.ibu,
-        style : this.style,
-        salePercentage : 0,
-        pints : this.pints,
-        imageUrl: this.imageurl
-      })
+  addKeg(name,
+  description,
+  origin,
+  brand,
+  price,
+  abv,
+  ibu,
+  style,
+  pints,
+  imageurl){
+    let thisKeg = {
+      name : name,
+      description : description,
+      origin : origin,
+      brand : brand,
+      price : price,
+      ABV : abv,
+      IBU : ibu,
+      style : style,
+      salePercentage : 0,
+      pints : pints,
+      imageUrl: imageurl
+    }
+      this.kegs.push(thisKeg);
+      console.log("asdfsd", this.kegs);
 
   }
 

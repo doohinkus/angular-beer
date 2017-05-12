@@ -1,29 +1,20 @@
 
-<nav class="nav navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-fixed-top">
-  <a class="navbar-brand" href="#">Tap-Room</a>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="nav navbar-nav">
-      <li class="nav-item active">
-      <button (click)="showNew()" class="btn btn-outline-secondary navbar-btn">Add New Keg</button>
-      </li>
-    </ul>
-     <div class="form-inline navbar-form navbar-right">
-
-			 <label class="filter">Filter by name </label>
-			 <input type="text" [(ngModel)]="term" class="form-control">
-     </div>
-
-  </div>
+<nav class="nav navbar navbar-inverse bg-inverse navbar-fixed-top text-center">
+  <h2 class="text-center">Tap-Room</h2>
 </nav>
 
 
 <div class="site-wrapper">
 <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="form-inline">
+        <label class="filter text-white">Filter by name </label>
+        <input type="text" [(ngModel)]="term" class="form-control">
+      </div>
+    </div>
+  </div>
 
-
-
-<!-- <div class="keg"> -->
 	<div *ngFor="let keg of kegs | async | filter:term; let i = index" class="keg">
     <div class="row">
       <div class="col-sm-12">
@@ -31,7 +22,6 @@
       </div>
     </div>
     <div class="row">
-
       <div class="col-sm-4">
         <h3 class="name">{{keg.name}}</h3>
     		<h4 class="origin">{{keg.origin}}</h4>
@@ -55,7 +45,7 @@
             {{keg.IBU}}%
           </div>
         </div>
-          <button (click)="showEdit(keg)" class="btn  btn-outline-warning btn-block" data-toggle="modal" data-target="#myModal">Edit</button>
+
 
       </div>
 
@@ -75,6 +65,64 @@
         </div>
         <h4>( {{keg.pints}} / 124 )</h4>
           <button  (click)="buyPint(keg.$key, keg)" class="btn btn-outline-success btn-block">Buy</button>
+          <button (click)="showEdit(keg)" class="btn  btn-outline-warning btn-block" data-toggle="modal" data-target="#myModal">Edit</button>
+          <button (click)="showNew()" class="btn btn-outline-secondary btn-block">Add New Keg</button>
+      </div>
+      <div class="col-sm-12">
+        <div *ngIf="add">
+        		<div class="form-group">
+        			<label for="name" class="text-white">Name: </label>
+        			<input class="form-control"  placeholder="Name:" [(ngModel)]="name">
+        		</div>
+        		<div class="form-group">
+        			<label for="description" class="text-white">Description: </label>
+        			<input required class="form-control"  placeholder="Description:" [(ngModel)]="description">
+        		</div>
+        		<div class="form-group">
+        			<label for="style" class="text-white">Style: </label>
+        			<input required class="form-control"  placeholder="Style:" [(ngModel)]="style">
+        		</div>
+        		<div class="form-group">
+        			<label for="origin" class="text-white">Origin: </label>
+        			<input required class="form-control"  placeholder="Origin:" [(ngModel)]="origin">
+        		</div>
+        		<div class="form-group">
+        			<label for="brand" class="text-white">Brand: </label>
+        			<input required class="form-control"   placeholder="Brand:" [(ngModel)]="brand">
+        		</div>
+        		<div class="form-group">
+        			<label for="abv" class="text-white">ABV: </label>
+        			<input required class="form-control" placeholder="ABV:" [(ngModel)]="abv">
+        		</div>
+        		<div class="form-group">
+        			<label for="ibu" class="text-white">IBU: </label>
+        			<input required class="form-control" placeholder="IBU:" [(ngModel)]="ibu">
+        		</div>
+        		<div class="form-group">
+        			<label for="price" class="text-white">Price: </label>
+        			<input required class="form-control"   placeholder="Price:" [(ngModel)]="price">
+        		</div>
+        		<div class="form-group">
+        			<label for="imageurl" class="text-white">ImageUrl: </label>
+        			<input required class="form-control" placeholder="ImageUrl:" [(ngModel)]="imageurl">
+        		</div>
+        		<div class="form-group">
+        			<label for="pints" class="text-white">pints: </label>
+        			<input required class="form-control"  placeholder="pints:" [(ngModel)]="pints">
+        		</div>
+
+        	<button class="btn btn-success" (click)="addKeg(name,
+          description,
+          origin,
+          brand,
+          price,
+          abv,
+          ibu,
+          style,
+          pints,
+          imageurl)">Add Keg</button>
+          <button class="btn btn-warning"  (click)="hideEdit()">Cancel</button>
+        	</div>
       </div>
 
 
@@ -86,50 +134,7 @@
 	</div>
 <!-- </div> -->
 
-<div *ngIf="add">
-		<div class="form-group">
-			<label for="">Name: </label>
-			<input class="form-control"  placeholder="Name:" [(ngModel)]="name">
-		</div>
-		<div class="form-group">
-			<label for="">Description: </label>
-			<input  class="form-control"  placeholder="Description:" [(ngModel)]="description">
-		</div>
-		<div class="form-group">
-			<label for="">Style: </label>
-			<input  class="form-control"  placeholder="Style:" [(ngModel)]="style">
-		</div>
-		<div class="form-group">
-			<label for="">Origin: </label>
-			<input  class="form-control"  placeholder="Origin:" [(ngModel)]="origin">
-		</div>
-		<div class="form-group">
-			<label for="">Brand: </label>
-			<input  class="form-control"   placeholder="Brand:" [(ngModel)]="brand">
-		</div>
-		<div class="form-group">
-			<label for="">ABV: </label>
-			<input  class="form-control" placeholder="ABV:" [(ngModel)]="abv">
-		</div>
-		<div class="form-group">
-			<label for="">IBU: </label>
-			<input  class="form-control" placeholder="IBU:" [(ngModel)]="ibu">
-		</div>
-		<div class="form-group">
-			<label for="">Price: </label>
-			<input  class="form-control"   placeholder="Price:" [(ngModel)]="price">
-		</div>
-		<div class="form-group">
-			<label for="">ImageUrl: </label>
-			<input  class="form-control" placeholder="ImageUrl:" [(ngModel)]="imageurl">
-		</div>
-		<div class="form-group">
-			<label for="">pints: </label>
-			<input  class="form-control"  placeholder="pints:" [(ngModel)]="pints">
-		</div>
 
-	<input class="btn btn-success" value="Submit" (click)="addKeg()">
-	</div>
 
 
 

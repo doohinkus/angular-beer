@@ -9,6 +9,10 @@ body {
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
+
+label{
+  color: #333;
+}
 h3{
   font-size: 18px;
   text-transform: uppercase;
@@ -128,7 +132,9 @@ box-shadow: 3px 3px 3px #222;
 		border-left-width: .75em;
 		border-right-color:transparent;
 	}
-
+.modal-title{
+  color:#555;
+}
 /*.content:before, .content:after {
 		content:"";
 		bottom:-.5em;
